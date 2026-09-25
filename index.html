@@ -5,64 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       background-color: #000000;
-      box-sizing: border-box;
       font-family: Arial, sans-serif;
+      overflow-x: hidden;
     }
     
-    /* Container for the image */
-    .image-container {
-      max-width: 90%;
-      margin-bottom: 25px;
+    /* Wrapper that holds both image and button together */
+    .hero-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      min-height: 100vh;
     }
     
-    .image-container img {
-      width: 100%;
-      max-width: 500px; /* Adjusts maximum width of your image */
+    /* Full-scale image */
+    .hero-wrapper img {
+      width: 100vw;
+      max-width: 1200px;
       height: auto;
+      max-height: 95vh;
+      object-fit: contain;
       display: block;
-      border-radius: 8px;
     }
 
-    /* Instagram Button Styling */
+    /* Button overlaid directly on top of the image */
     .instagram-btn {
-      display: inline-block;
-      padding: 14px 28px;
+      position: absolute;
+      top: 50%;                  /* Center vertically */
+      left: 50%;                 /* Center horizontally */
+      transform: translate(-50%, -50%); /* Locks perfect center alignment */
+      z-index: 10;
+      padding: 18px 36px;
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
       color: #ffffff;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
       border-radius: 30px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      white-space: nowrap;
     }
 
     .instagram-btn:hover {
-      transform: scale(1.05);
+      transform: translate(-50%, -50%) scale(1.06);
       opacity: 0.95;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
     }
   </style>
 </head>
 <body>
 
-  <!-- Non-clickable display image -->
-  <div class="image-container">
+  <div class="hero-wrapper">
     <img src="image.png" alt="Website Display Image">
+    
+    <a href="https://www.instagram.com/ayalenurfragrance" class="instagram-btn" target="_blank">
+      Message me on Instagram
+    </a>
   </div>
-
-  <!-- Dedicated Instagram Button -->
-  <a href="https://www.instagram.com/ayalenurfragrance" class="instagram-btn" target="_blank">
-    Message me on Instagram
-  </a>
 
 </body>
 </html>
