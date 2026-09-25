@@ -1,33 +1,68 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome</title>
-<style>
-body {
-margin: 0;
-padding: 0;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-background-color: #000000;
-}
-.placeholder-link {
-display: inline-block;
-max-width: 90%;
-}
-.placeholder-link img {
-width: 100%;
-height: auto;
-display: block;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #000000;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Container for the image */
+    .image-container {
+      max-width: 90%;
+      margin-bottom: 25px;
+    }
+    
+    .image-container img {
+      width: 100%;
+      max-width: 500px; /* Adjusts maximum width of your image */
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Instagram Button Styling */
+    .instagram-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 30px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .instagram-btn:hover {
+      transform: scale(1.05);
+      opacity: 0.95;
+    }
+  </style>
 </head>
 <body>
-​<a href="https://www.instagram.com/ayalenurfragrance" class="placeholder-link">
-<img src="image.png" alt="message me on Instagram">
-</a>
-​</body>
+
+  <!-- Non-clickable display image -->
+  <div class="image-container">
+    <img src="image.png" alt="Website Display Image">
+  </div>
+
+  <!-- Dedicated Instagram Button -->
+  <a href="https://www.instagram.com/ayalenurfragrance" class="instagram-btn" target="_blank">
+    Message me on Instagram
+  </a>
+
+</body>
 </html>
