@@ -152,29 +152,31 @@
             color: #d4af37;
         }
 
-        /* Base desktop settings (Laptop) */
-.hero-container {
-    width: 100%;
-    height: 100vh; 
-    background-image: url('image.jpg');
-    background-size: contain
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: #000000;
-}
+        /* Hero Image Container */
+        .hero-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0d0d0d;
+            overflow: hidden;
+            position: relative;
+        }
 
-/* Mobile screen settings (Phones under 768px wide) */
-@media (max-width: 768px) {
-    .hero-container {
-        width: 100%;
-        height: 100vh;
-        background-image: url('image.jpg');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-color: #000000;
-    }
-}
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Full image visible on desktop without cropping */
+            display: block;
+        }
+
+        /* Mobile Screen Adjustments (Phones under 768px wide) */
+        @media (max-width: 768px) {
+            .hero-image {
+                object-fit: fill; /* Fits exact phone dimensions edge-to-edge */
+            }
+        }
     </style>
 </head>
 <body>
@@ -206,7 +208,9 @@
     </div>
 
     <!-- Main Background Canvas -->
-    <div class="hero-container"></div>
+    <div class="hero-container">
+        <img src="image.jpg" alt="Ayale Nur Fragrance" class="hero-image">
+    </div>
 
     <script>
         function toggleMenu() {
