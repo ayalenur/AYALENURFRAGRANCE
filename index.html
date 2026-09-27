@@ -154,7 +154,7 @@
 
         /* Hero Image Container */
         .hero-container {
-            width: 110vw;
+            width: 100vw;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -164,8 +164,9 @@
             position: relative;
         }
 
+        /* Image scaling rules */
         .hero-image {
-            width: 110%;
+            width: 100%;
             height: 100%;
             object-fit: contain; /* Full image visible on desktop without cropping */
             display: block;
@@ -209,7 +210,13 @@
 
     <!-- Main Background Canvas -->
     <div class="hero-container">
-        <img src="image.jpg" alt="Ayale Nur Fragrance" class="hero-image">
+        <picture>
+            <!-- Mobile Image (used on screens up to 768px wide) -->
+            <source media="(max-width: 768px)" srcset="image.jpg">
+            
+            <!-- Laptop / Desktop Image (fallback for larger screens) -->
+            <img src="image1.jpg" alt="Ayale Nur Fragrance" class="hero-image">
+        </picture>
     </div>
 
     <script>
